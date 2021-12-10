@@ -8,7 +8,30 @@ Contact::~Contact()
 {
 }
 
+void Contact::fillContact()
+{
+	std::string filling;
 
+	std::cout << "Introduce First Name:" << std::endl << "# ";
+	std::getline(std::cin, filling);
+	set_firstName(filling);
+
+	std::cout << "Introduce Last Name:" << std::endl << "# ";
+	std::getline(std::cin, filling);
+	set_firstName(filling);
+
+	std::cout << "Introduce your Nickname:" << std::endl << "# ";
+	std::getline(std::cin, filling);
+	set_firstName(filling);
+
+	std::cout << "Introduce the Phone Number:" << std::endl << "# ";
+	std::getline(std::cin, filling);
+	set_firstName(filling);
+
+	std::cout << "Introduce your Darkest Secret:" << std::endl << "# ";
+	std::getline(std::cin, filling);
+	set_firstName(filling);
+}
 
 // SETTERS
 

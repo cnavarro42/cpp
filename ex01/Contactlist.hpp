@@ -8,8 +8,13 @@ class Contactlist
 		Contact spaceContact [8];
 		int	pos;
 		int len;
+	public:
+		Contactlist();
+		~Contactlist();
+		void contactAdd(void);
+		void searchCowboys(int len);
 
-		
+	//GETTER
+		int getLen(void);
 };
-
 #endif

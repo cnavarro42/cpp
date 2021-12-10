@@ -16,6 +16,8 @@ class Contact
 		Contact();
 		~Contact();
 
+		void fillContact();
+		
 		// SETTERS
 
 		void set_firstName(std::string firstName);

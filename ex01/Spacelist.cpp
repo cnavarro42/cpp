@@ -12,14 +12,17 @@ void printRequest(void)
 	std::cout << "(ADD/SEARCH/EXIT)" << std::endl;
 }
 
-void addContact()
+void addContact(Contactlist &spacelist)
 {
-	
+	spacelist.contactAdd();
 }
 
-void displayList()
+void displayList(Contactlist &spacelist)
 {
-
+	if (spacelist.getLen() == 0)
+		std::cout << "THERE IS NO SPACE COWBOYS IN THE SPACELIST" << std::endl;
+	else
+		spacelist.searchCowboys(spacelist.getLen());
 }
 
 int main(void)
@@ -34,9 +37,9 @@ int main(void)
 		std::cout << "# ";
 		getline(std::cin, request);
 		if (!(request.compare("ADD")))
-			addContact();
+			addContact(spacelist);
 		else if (!(request.compare("SEARCH")))
-			displayList();
+			displayList(spacelist);
 		else if (!(request.compare("EXIT")));
 			break;
 	}
