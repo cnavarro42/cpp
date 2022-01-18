@@ -2,6 +2,8 @@
 # define CONTACTLIST_HPP
 
 #include "Contact.hpp"
+#include <iomanip>
+
 
 class Contactlist
 {
@@ -12,7 +14,8 @@ class Contactlist
 		Contactlist();
 		~Contactlist();
 		void contactAdd(void);
-		void searchCowboys(int len);
+		void searchCowboys(void);
+		void printRow(std::string row);
 
 	//GETTER
 		int getLen(void);
