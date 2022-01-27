@@ -30,12 +30,10 @@ int main(void)
 	std::string request;
 	Contactlist spacelist;
 
-	while (1) {
-		system("clear");
-		printWelcome();
+	printWelcome();
+	while (std::getline(std::cin, request)) {
 		printRequest();
 		std::cout << "# ";
-		getline(std::cin, request);
 		if (!(request.compare("ADD")))
 			addContact(spacelist);
 		else if (!(request.compare("SEARCH")))
