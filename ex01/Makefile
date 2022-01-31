@@ -1,19 +1,19 @@
-NAME =		minilists
+NAME =		spacelist
 
-CPP =		clang++
+CXX =		clang++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 RM =		rm -rf
 
-SRCS =		minilist.cpp
+SRCS =		Contactlist.cpp Contact.cpp Spacelist.cpp
 
 OBJS =		$(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS)
+		$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 		$(RM) $(OBJS)

@@ -18,19 +18,19 @@ void Contact::fillContact()
 
 	std::cout << "Introduce Last Name:" << std::endl << "# ";
 	std::getline(std::cin, filling);
-	set_firstName(filling);
+	set_lastName(filling);
 
 	std::cout << "Introduce your Nickname:" << std::endl << "# ";
 	std::getline(std::cin, filling);
-	set_firstName(filling);
+	set_nickname(filling);
 
 	std::cout << "Introduce the Phone Number:" << std::endl << "# ";
 	std::getline(std::cin, filling);
-	set_firstName(filling);
+	set_phone(filling);
 
 	std::cout << "Introduce your Darkest Secret:" << std::endl << "# ";
 	std::getline(std::cin, filling);
-	set_firstName(filling);
+	set_darkestSecret(filling);
 }
 
 // SETTERS

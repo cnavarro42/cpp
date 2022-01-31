@@ -1,8 +1,8 @@
 NAME =		megaphone
 
-CPP =		clang++
+CXX =		clang++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 RM =		rm -rf
 
@@ -13,7 +13,7 @@ OBJS =		$(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS)
+		$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 		$(RM) $(OBJS)

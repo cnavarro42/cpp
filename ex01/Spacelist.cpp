@@ -10,6 +10,7 @@ void printRequest(void)
 {
 	std::cout << "PLEASE, TYPE YOUR REQUEST:" << std::endl;
 	std::cout << "(ADD/SEARCH/EXIT)" << std::endl;
+	std::cout << "# ";
 }
 
 void addContact(Contactlist &spacelist)
@@ -20,9 +21,12 @@ void addContact(Contactlist &spacelist)
 void displayList(Contactlist &spacelist)
 {
 	if (spacelist.getLen() == 0)
+	{
 		std::cout << "THERE IS NO SPACE COWBOYS IN THE SPACELIST" << std::endl;
+		std::cout << std::endl;
+	}
 	else
-		spacelist.searchCowboys(spacelist.getLen());
+		spacelist.searchCowboys();
 }
 
 int main(void)
@@ -31,15 +35,16 @@ int main(void)
 	Contactlist spacelist;
 
 	printWelcome();
+	printRequest();
 	while (std::getline(std::cin, request)) {
-		printRequest();
-		std::cout << "# ";
 		if (!(request.compare("ADD")))
 			addContact(spacelist);
 		else if (!(request.compare("SEARCH")))
 			displayList(spacelist);
-		else if (!(request.compare("EXIT")));
+		else if (!(request.compare("EXIT")))
 			break;
+		std::cout << std::endl;
+		printRequest();
 	}
 	std::cout << "SEE YOU, SPACE COWBOY" << std::endl;
 	return (0);
