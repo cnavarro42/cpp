@@ -1,4 +1,4 @@
-NAME =		horde
+NAME =		brainz
 
 CXX =		clang++
 
@@ -6,7 +6,7 @@ CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 RM =		rm -rf
 
-SRCS =		Zombie.cpp ZombieHorde.cpp main.cpp
+SRCS =		main.cpp
 
 OBJS =		$(SRCS:.cpp=.o)
 
