@@ -5,8 +5,8 @@
 
 class Fixed
 {
-    int                 _fixed_point;
-    static const int    _bits = 8;
+    int _fixed_point;
+    static const int _bits = 8;
 
     public:
         Fixed();
@@ -17,7 +17,8 @@ class Fixed
 
         float toFloat( void ) const;
         int toInt( void ) const;
-        Fixed & operator=( Fixed const & rhs );
+        Fixed & operator=( Fixed const & rhs);
+    //GETTERS
         int getRawBits( void ) const;
     //SETTERS
         void setRawBits( int const raw );
