@@ -5,7 +5,7 @@
 
 class Fixed
 {
-    int                 _fixed_point;
+    int                 _value;
     static const int    _bits = 8;
 
     public:
@@ -15,12 +15,12 @@ class Fixed
         Fixed( Fixed const & src );
         ~Fixed();
 
-        float toFloat( void ) const;
-        int toInt( void ) const;
+        float   toFloat( void ) const;
+        int     toInt( void ) const;
         Fixed & operator=( Fixed const & rhs );
-        int getRawBits( void ) const;
+        int     getRawBits( void ) const;
     //SETTERS
-        void setRawBits( int const raw );
+        void    setRawBits( int const raw );
 };
 
 std::ostream & operator<<( std::ostream & o, Fixed const & i);
