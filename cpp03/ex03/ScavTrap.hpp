@@ -4,8 +4,12 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap : virtual ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
+    protected:
+        const unsigned int _startedHitPoints;
+        const unsigned int _startedEnergyPoints;
+        const unsigned int _startedAttackDamage;
     public:
         ScavTrap();
         ScavTrap( std::string name );

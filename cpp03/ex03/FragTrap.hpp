@@ -4,19 +4,23 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class FragTrap : virtual ClapTrap
+class FragTrap : virtual public ClapTrap
 {
+    protected:
+        const unsigned int _startedHitPoints;
+        const unsigned int _startedEnergyPoints;
+        const unsigned int _startedAttackDamage;
     public:
         FragTrap();
         FragTrap( std::string name );
-        FragTrap( FragTrap const & src);
+        FragTrap( const FragTrap &src );
         ~FragTrap();
 
-        FragTrap & operator=( FragTrap const & rhs);
-        void attack( std::string const &target );
+        FragTrap &operator=( FragTrap const & rhs);
+        void attack( const std::string &target );
         void highFiveGuys(void);
 };
 
-std::ostream & operator<<( std::ostream & o, FragTrap const & i);
+std::ostream &operator<<( std::ostream & o, FragTrap const & i);
 
 #endif

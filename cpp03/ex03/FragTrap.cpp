@@ -1,16 +1,16 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : _startedHitPoints(100), _startedEnergyPoints(100), _startedAttackDamage(30)
 {
     std::cout << "FragTrap Constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name) : _startedHitPoints(100), _startedEnergyPoints(100), _startedAttackDamage(30)
 {
     set_name(name);
-    set_hitPoints(100);
-    set_energyPoints(100);
-    set_attackDamage(30);
+    set_hitPoints(this->_startedHitPoints);
+    set_energyPoints(this->_startedEnergyPoints);
+    set_attackDamage(this->_startedAttackDamage);
     set_maxEnergy(100);
     std::cout << "FragTrap Constructor called" << std::endl;
 }
@@ -20,7 +20,7 @@ FragTrap::~FragTrap()
     std::cout << "FragTrap Destructor called" << std::endl;
 }
 
-FragTrap::FragTrap( FragTrap const & src)
+FragTrap::FragTrap( FragTrap const & src) : _startedHitPoints(100), _startedEnergyPoints(100), _startedAttackDamage(30)
 {
     std::cout << "Copy Constructor called" << std::endl;
     *this = src;

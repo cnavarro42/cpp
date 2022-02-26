@@ -1,16 +1,20 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap(void) : _startedHitPoints(100), _startedEnergyPoints(50), _startedAttackDamage(20)
 {
     std::cout << "ScavTrap Constructor called" << std::endl;
+    set_hitPoints(this->_startedHitPoints);
+    set_energyPoints(this->_startedEnergyPoints);
+    set_attackDamage(this->_startedAttackDamage);
+    set_maxEnergy(100);
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : _startedHitPoints(100), _startedEnergyPoints(50), _startedAttackDamage(20)
 {
     set_name(name);
-    set_hitPoints(100);
-    set_energyPoints(50);
-    set_attackDamage(20);
+    set_hitPoints(this->_startedHitPoints);
+    set_energyPoints(this->_startedEnergyPoints);
+    set_attackDamage(this->_startedAttackDamage);
     set_maxEnergy(100);
     std::cout << "ScavTrap Constructor called" << std::endl;
 }
@@ -20,8 +24,12 @@ ScavTrap::~ScavTrap()
     std::cout << "Scavtrap Destructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & src)
+ScavTrap::ScavTrap( const ScavTrap & src) : _startedHitPoints(100), _startedEnergyPoints(50), _startedAttackDamage(20)
 {
+    set_hitPoints(this->_startedHitPoints);
+    set_energyPoints(this->_startedEnergyPoints);
+    set_attackDamage(this->_startedAttackDamage);
+    set_maxEnergy(100);
     std::cout << "Copy Constructor called" << std::endl;
     *this = src;
 }

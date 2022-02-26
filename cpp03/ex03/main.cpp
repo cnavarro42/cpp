@@ -1,16 +1,20 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+
 int	main(void)
 {
     //ClapTrap clappy("clappy");
     //ClapTrap tommy("tommy");
-    FragTrap fraggy("fraggy");
+    DiamondTrap diam("diam");
 
-    fraggy.attack("ENEMIES OF DEMACIAAAA!!");
-    fraggy.takeDamage(5);
-    fraggy.beRepaired(3);
-    fraggy.highFiveGuys();
+    diam.whoAmI();
+    diam.attack("with the power of DIAMONDS");
+    diam.takeDamage(5);
+    diam.beRepaired(3);
+    diam.highFiveGuys();
+    diam.guardGate();
 
 	return 0;
 }

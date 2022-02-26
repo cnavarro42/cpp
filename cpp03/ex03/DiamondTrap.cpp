@@ -7,10 +7,10 @@ DiamondTrap::DiamondTrap()
 
 DiamondTrap::DiamondTrap(std::string name)
 {
-    set_name(name);
-    set_hitPoints(FragTrap::_hitPoints);
-    set_energyPoints(ScavTrap::_energyPoints);
-    set_attackDamage(FragTrap::_attackDamage);
+    set_name(name + "_clap_name");
+    set_hitPoints(FragTrap::_startedHitPoints);
+    set_energyPoints(ScavTrap::_startedEnergyPoints);
+    set_attackDamage(FragTrap::_startedAttackDamage);
     set_maxEnergy(ScavTrap::_maxEnergy);
     std::cout << "DiamondTrap Constructor called" << std::endl;
 }
@@ -46,5 +46,5 @@ void DiamondTrap::attack(std::string const &target)
 
 void DiamondTrap::whoAmI(void)
 {
-    std::cout << "Hey guys, let's High Five!!!" << std::endl;
+    std::cout << "Hi, my name is " << ClapTrap::_name << std::endl;
 }
