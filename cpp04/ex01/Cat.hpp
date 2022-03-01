@@ -3,9 +3,11 @@
 
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
+        Brain *braining;
     public:
         Cat();
         Cat( Cat const & src);
@@ -13,6 +15,7 @@ class Cat : public Animal
 
         Cat & operator=( Cat const & rhs);
         void makeSound(void) const;
+        Brain *getBraining(void) const;
 };
 
 #endif
