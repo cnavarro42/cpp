@@ -8,37 +8,36 @@ Replace::~Replace(void)
 {
     this->_file.close();
 }
-void Replace::insertRow()
-{
-    std::fstream    outfile;
-    std::string     row;
-    std::string     newRow;
 
-    outfile.open(_filename + ".replace", std::fstream::out);
-    while (std::getline(this->_file, row))
-    {
-        if (row.find(this->_s1))
-        {
-            newRow = Replace::replaceRow(row);
-            outfile << newRow << std::endl;
-        }
-        else
-            outfile << row << std::endl;
-    }
-}
 std::string Replace::replaceRow(std::string row)
 {
-    std::string replacedRow;
+    std::string newLine;
     size_t pos;
+    size_t start;
+    size_t end;
 
+    start = row.find(this->_s1);
     pos = 0;
-    replacedRow = row.substr(pos, row.find(this->_s1));
-
-    while((pos = row.find(this->_s1, pos)) != std::string::npos) //!!!!
+    while (start != row.npos)
     {
-        replacedRow += this->_s2;
-        pos += this->_s1.length();
-        replacedRow += row.substr(pos, row.find(this->_s1));
+        end = start + this->_s1.size();
+        newLine += (row.substr(pos, start) + this->_s2);
+        pos += end;
+        start = row.substr(pos).find(this->_s1);
     }
-    return (replacedRow);
+    newLine += row.substr(pos);
+    if (!newLine.size())
+        return (row);
+    return (newLine);
+}
+
+void Replace::insertRow()
+{
+    std::fstream    infile(this->_filename);
+    std::fstream    outfile;
+    std::string     row;
+
+    outfile.open(this->_filename + ".replace", std::fstream::out);
+    while (std::getline(infile, row))
+        outfile << replaceRow(row) << std::endl;
 }

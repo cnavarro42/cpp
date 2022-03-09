@@ -1,4 +1,4 @@
-NAME =		replace
+NAME =		materia
 
 CXX =		clang++
 
@@ -6,8 +6,7 @@ CXXFLAGS =	-Wall -Wextra -Werror -g -std=c++98
 
 RM =		rm -rf
 
-SRCS =		main.cpp Replace.cpp
-
+SRCS =		main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJS =		$(SRCS:.cpp=.o)
 
 all: $(NAME)

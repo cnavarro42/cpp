@@ -19,10 +19,9 @@ class Fixed
         int     toInt( void ) const;
         Fixed & operator=( Fixed const & rhs );
         int     getRawBits( void ) const;
-    //SETTERS
         void    setRawBits( int const raw );
 };
 
-std::ostream & operator<<( std::ostream & o, Fixed const & i);
+std::ostream &operator<<( std::ostream & o, Fixed const & i);
 
 #endif
