@@ -18,6 +18,7 @@ clean:
 		$(RM) $(OBJS)
 fclean: clean
 		$(RM) $(NAME)
+		$(RM) shrub_shrubbery
 re: fclean all
 
 .PHONY: all clean fclean re
