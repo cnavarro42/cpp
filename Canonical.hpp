@@ -5,17 +5,12 @@
 
 class Canonical
 {
-    int _n;
-
     public:
         Canonical();
-        Canonical( Canonical const &src);
+        Canonical( Canonical const &copy);
         ~Canonical();
 
-        Canonical &operator=( Canonical const &rhs);
-    //GETTERS
-        int getN( void ) const;
-    //SETTERS
+        Canonical &operator=( Canonical const &assig);
 };
 
 std::ostream &operator<<( std::ostream &o, Canonical const &i);

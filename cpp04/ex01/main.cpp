@@ -33,7 +33,7 @@ int main()
         std::cout << deep->getBraining()->ideas[i] << std::endl;
     for (int i = 0; i < 10; i++)
         delete dogsAndCats[i];
-    delete j;   //should not create a leak
+    delete j;
     delete i;
     return (0);
 }
