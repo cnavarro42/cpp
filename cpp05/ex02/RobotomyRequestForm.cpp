@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("shrubberyCreation", 145, 137)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestCreation", 145, 137)
 {
     std::cout << "Default Constructor called" << std::endl;
     this->_target = target;
@@ -32,7 +32,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
         throw Form::GradeTooLowException();
     if (this->getSigned() == false)
         throw Form::NotSignedException();
-    std::cout << "Form " << this->getName() << "executed"<< std::endl;
+    std::cout << "Form " << this->getName() << " executed"<< std::endl;
     std::cout <<  "Some Drilling noise beep beep..." << std::endl;
     std::cout << this->_target << " has been robotomized successfully 50% of the time" << std::endl;
 }
