@@ -15,4 +15,5 @@ int main(void)
     deserialized = deserialize(serialized);
 
     std::cout << deserialized->v << std::endl;
+    delete data;
 }
